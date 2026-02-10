@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UFT-8">
-    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
-    <title>Orlando| Portafolio </title>
-    <style> 
-       body {font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f0f2f5; display: flex;justify-content: center;align-items: center;min-height: 100vh;margin: 0;}
-       .card {background-color: white; padding: 2.5rem;border-radius: 15px;box-shadow: 0  10px 25px rgba(0,0,0,0.1);text-align: center;width: 350px;}
-       h1{margin: 10px 0; color: #1a1a1a;}
-       p {color: #666;font-size: 0.9rem;line-height: 1.4;}
-       .link {margin-top: 20px;}
-       .btn {display: block;background: #0070bb;color: white;text-decoration: none;padding: 12px;margin: 10px 0;border-radius: 8px;font-weight: bold;transition: 0.3s;}
-       .btn:hover {background: #005691;transform: scale(1.02);}
-       .btn-cv{background: #28a745;}
-       .btn-cv:hover {background: #218838;}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orlando | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
+
+    <div class="container">
+        <img src="perfil.jpg" alt="Orlando" class="profile-img">
         <h1>Orlando</h1>
-        <p>Estudiante de ingenieria en sistemas - UAEM </p>
-        <p>Especiaista en Automatizacion de procesos python (panda y Selenium)</p>
-    <div class="links">
-        <a href="Tu cv.pdf" target="_blank" class="btn btn-cv"> Descargar cv (pdf) </a>
-        <a href="https://github.com/Orlando7560" target="_blank" class="btn">Github</a>
-        <a href="https://linkedin.com/in/Tu-perfil" target="_blank" class="btn">Linkedin</a>
+        <p class="tagline">Ingeniero en Sistemas | UAEM</p>
+
+        <div class="section">
+            <h3>Habilidades Técnicas</h3>
+            <div class="skills-container">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Selenium</span>
+                <span class="skill-pill">Pandas</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">Linux (Pop!_OS)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Experiencia</h3>
+            <div class="timeline-item">
+                <h4>AT&T - Automatización Financiera</h4>
+                <span>Ago 2025 - Dic 2025</span>
+                <p>Optimización de procesos manuales mediante scripts de Python para el control de redes.</p>
+            </div>
+        </div>
+
+        <div class="social-grid">
+            <a href="CV_Orlando.pdf" download class="btn btn-primary">📄 Descargar CV</a>
+            <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="btn btn-outline">🔗 LinkedIn</a>
+        </div>
+
+        <div class="section contact-form">
+            <h3>Enviame un mensaje</h3>
+            <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="message" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border:none;">Enviar Correo</button>
+            </form>
+        </div>
     </div>
-    </div>
+
 </body>
 </html>
