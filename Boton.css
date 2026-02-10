@@ -1,22 +1,36 @@
-/* From Uiverse.io by M4rco592 */ 
 .gradient-button {
   position: relative;
-  padding: 16px 32px;
-  font-size: 18px;
+  width: 90%;             /* Para que ocupe el ancho disponible en la rejilla */
+  padding: 10px 10px;      /* Un poco más compacto */
+  font-size: 16px;
   font-weight: bold;
   color: white;
   background: transparent;
   border: none;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 12px;     
   overflow: hidden;
   transition: transform 0.2s ease;
+  text-decoration: none;   /* Quita subrayado si se aplica al link */
+  display: flex;           /* Centra el contenido */
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-button a {
+    text-decoration: none; /* Asegura que el link interno no tenga subrayado */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gradient-button:hover {
-  transform: scale(1.03);
+  transform: translateY(-3px); /* Efecto de elevación */
 }
 
+/* El borde animado (Fondo trasero) */
 .gradient-button::before {
   content: "";
   position: absolute;
@@ -26,60 +40,38 @@
   height: 200%;
   background: conic-gradient(
     from 0deg,
-    #ff6b6b,
-    #4ecdc4,
-    #45b7d1,
-    #96ceb4,
-    #feca57,
-    #ff9ff3,
-    #ff6b6b
+    #10b981, /* Tu verde principal */
+    #3b82f6, /* Tu azul acento */
+    #10b981  /* Repite para cerrar el ciclo */
   );
   z-index: -2;
-  filter: blur(10px);
-  transform: rotate(0deg);
-  transition: transform 1.5s ease-in-out;
+  animation: rotate 4s linear infinite; /* Animación continua suave */
 }
 
-.gradient-button:hover::before {
-  transform: rotate(180deg);
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
 }
 
+/* El fondo interno (Para que parezca borde) */
 .gradient-button::after {
   content: "";
   position: absolute;
-  inset: 3px;
-  background: black;
-  border-radius: 47px;
+  inset: 2px;             /* Grosor del borde */
+  background: #1e293b;    /* MISMO COLOR QUE TU TARJETA (Importante) */
+  border-radius: 10px;    /* Un poco menos que el botón */
   z-index: -1;
-  filter: blur(5px);
 }
 
+/* Texto con gradiente */
 .gradient-text {
-  color: transparent;
-  background: conic-gradient(
-    from 0deg,
-    #ff6b6b,
-    #4ecdc4,
-    #45b7d1,
-    #96ceb4,
-    #feca57,
-    #ff9ff3,
-    #ff6b6b
-  );
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  -webkit-background-clip: text;
   background-clip: text;
-  filter: hue-rotate(0deg);
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .gradient-button:hover .gradient-text {
-  animation: hue-rotating 2s linear infinite;
-}
-
-.gradient-button:active {
-  transform: scale(0.99);
-}
-
-@keyframes hue-rotating {
-  to {
-    filter: hue-rotate(360deg);
-  }
+  filter: brightness(1.2); /* Brilla más al pasar el mouse */
 }

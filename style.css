@@ -91,3 +91,37 @@ body {
     box-sizing: border-box;
 }
 
+.project-card {
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent); /* Borde azul a la izquierda */
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateX(5px); /* Efecto de movimiento al pasar el mouse */
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-card h4 { margin: 0 0 5px 0; color: #fff; }
+
+.tech-stack { margin-top: 10px; display: flex; gap: 5px; flex-wrap: wrap; }
+
+.tech-tag {
+    font-size: 0.75rem;
+    background: #334155;
+    color: #cbd5e1;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
